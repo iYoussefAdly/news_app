@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/Screens/web_view.dart';
 import 'package:news_app/models/results_model.dart';
@@ -24,8 +25,19 @@ class NewsTile extends StatelessWidget {
                 ),
               );
             },
-            child: Image.network(
-              resultsModel.image ?? 'https://via.placeholder.com/150',
+            child: CachedNetworkImage(
+              imageUrl:
+                  resultsModel.image ?? "http://via.placeholder.com/350x150",
+              placeholder:
+                  (context, url) => SizedBox(
+                    height: 200,
+                    child: Center(child: CircularProgressIndicator()),
+                  ),
+              errorWidget:
+                  (context, url, error) => SizedBox(
+                    height: 200,
+                    child: Center(child: Icon(Icons.error)),
+                  ),
               height: 200,
               width: double.infinity,
               fit: BoxFit.cover,
