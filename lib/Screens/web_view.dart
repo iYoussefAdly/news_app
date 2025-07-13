@@ -4,7 +4,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 class WebView extends StatelessWidget {
   const WebView({super.key, required this.link});
   final dynamic link;
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

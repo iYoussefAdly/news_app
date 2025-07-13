@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('News', style: TextStyle(color: Colors.black)),
+            Text('News', style: TextStyle(color: Colors.red)),
             Text('Cloud', style: TextStyle(color: Colors.orange)),
           ],
         ),
